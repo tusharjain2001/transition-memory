@@ -11,10 +11,10 @@ import {
 } from '../components/Icons'
 
 const chips = [
-  { icon: <ThreePeople size={28} />, label: 'Customers' },
-  { icon: <Truck size={28} />, label: 'Suppliers' },
-  { icon: <DocCheck size={28} />, label: 'Decisions' },
-  { icon: <Gear size={28} />, label: 'Operations' },
+  { svgIcon: <ThreePeople size={32} strokeWidth={1.9} />, label: 'Customers' },
+  { svgIcon: <Truck size={32} strokeWidth={1.9} />, label: 'Suppliers' },
+  { svgIcon: <DocCheck size={32} strokeWidth={1.9} />, label: 'Decisions' },
+  { svgIcon: <Gear size={32} strokeWidth={1.9} />, label: 'Operations' },
 ]
 
 const head = [
@@ -63,50 +63,73 @@ const faq = [
   { q: 'Do we need to install software?', a: 'No. The MVP is a guided service using agreed documents and interviews.' },
 ]
 
-const Node = ({ icon, label, size = 'h-[68px] w-[68px]', circle = true }) => (
-  <div className="flex flex-col items-center">
-    <div className={`flex items-center justify-center text-brand ${circle ? `rounded-full border border-line bg-cream ${size}` : size}`}>{icon}</div>
-    {label && <p className="mt-2 whitespace-pre-line text-center text-[12px] font-semibold leading-tight text-[#1f2a28]">{label}</p>}
-  </div>
-)
+const CHIP_X = 173
+const CHIP_W = 187
+const CHIP_H = 79
+const CHIP_CY = [53, 157, 259, 362]
+const OWNER = { cx: 53, cy: 186, r: 49 }
+const MEMORY = { cx: 510, cy: 186, r: 78 }
+const SUCC = { cx: 724, cy: 104, r: 52 }
+const SHIELD = { cx: 720, cy: 288 }
+const curve = (x1, y1, x2, y2) => {
+  const mx = (x1 + x2) / 2
+  return `M${x1} ${y1} C${mx} ${y1} ${mx} ${y2} ${x2} ${y2}`
+}
+
+const dotted = { fill: 'none', stroke: '#08463e', strokeWidth: 1.4, strokeDasharray: '2 3.5', strokeLinecap: 'round' }
+const solid = { fill: 'none', stroke: '#08463e', strokeWidth: 1.4 }
+const label = { fill: '#1f2a28', fontSize: 14, fontWeight: 600, textAnchor: 'middle' }
+const iconStroke = { strokeWidth: 1.9 }
 
 function HeroDiagram() {
+  const ownerRight = OWNER.cx + OWNER.r
+  const memLeft = MEMORY.cx - MEMORY.r
+  const memRight = MEMORY.cx + MEMORY.r
   return (
-    <div className="flex items-center justify-center">
-      <Node icon={<Person size={36} />} label={'Experienced\nowner'} />
-      <span className="w-4 border-t border-dotted border-brand" />
-      <div className="relative py-2">
-        <span className="absolute bottom-[14%] left-0 top-[14%] border-l border-dotted border-brand" />
-        <span className="absolute bottom-[14%] right-0 top-[14%] border-r border-dotted border-brand" />
-        <div className="flex flex-col gap-2 px-4">
-          {chips.map((c) => (
-            <div key={c.label} className="relative">
-              <span className="absolute -left-4 top-1/2 w-4 border-t border-dotted border-brand" />
-              <span className="absolute -right-4 top-1/2 w-4 border-t border-dotted border-brand" />
-              <div className="flex items-center gap-3 rounded-lg border border-line bg-cream px-4 py-2.5">
-                <span className="text-brand">{c.icon}</span>
-                <span className="text-[12.5px] font-semibold text-[#1f2a28]">{c.label}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <span className="w-4 border-t border-dotted border-brand" />
-      <div className="flex h-[108px] w-[108px] flex-col items-center justify-center rounded-full border border-line bg-cream text-brand">
-        <Brain size={34} />
-        <span className="mt-1 text-[11px] font-semibold leading-tight text-[#1f2a28]">Business<br />Memory</span>
-      </div>
-      <div className="relative flex h-[190px] items-center">
-        <span className="w-5 border-t border-brand" />
-        <span className="absolute bottom-[26%] left-5 top-[22%] border-l border-brand" />
-        <span className="absolute left-5 top-[22%] w-5 border-t border-brand" />
-        <span className="absolute bottom-[26%] left-5 w-5 border-t border-brand" />
-      </div>
-      <div className="flex flex-col items-center gap-5 pl-5">
-        <Node icon={<Person size={34} />} label={'Prepared\nsuccessor'} />
-        <Node icon={<ShieldSparkle size={50} />} label={'AI agents the business\ncan keep using'} circle={false} size="h-[52px]" />
-      </div>
-    </div>
+    <svg viewBox="0 0 820 410" className="h-auto w-full font-sans" role="img" aria-label="From experienced owner to Business Memory, prepared successor and AI agents">
+      {/* dotted curves: owner -> chips */}
+      {CHIP_CY.map((cy) => <path key={`l${cy}`} d={curve(ownerRight, OWNER.cy, CHIP_X, cy)} {...dotted} />)}
+      {/* dotted curves: chips -> memory */}
+      {CHIP_CY.map((cy) => <path key={`r${cy}`} d={curve(CHIP_X + CHIP_W, cy, memLeft, MEMORY.cy)} {...dotted} />)}
+      {/* solid curves: memory -> successor / agents */}
+      <path d={curve(memRight, MEMORY.cy, SUCC.cx - SUCC.r, SUCC.cy)} {...solid} />
+      <path d={curve(memRight, MEMORY.cy, SHIELD.cx - 40, SHIELD.cy)} {...solid} />
+
+      {/* owner */}
+      <circle cx={OWNER.cx} cy={OWNER.cy} r={OWNER.r} fill="#f7f5f0" stroke="#e6e1d8" />
+      <Person x={OWNER.cx - 21} y={OWNER.cy - 21} size={42} className="text-brand" {...iconStroke} />
+      <text x={OWNER.cx} y={OWNER.cy + OWNER.r + 24} {...label}>Experienced</text>
+      <text x={OWNER.cx} y={OWNER.cy + OWNER.r + 42} {...label}>owner</text>
+
+      {/* chips */}
+      {chips.map((c, i) => {
+        const cy = CHIP_CY[i]
+        return (
+          <g key={c.label}>
+            <rect x={CHIP_X} y={cy - CHIP_H / 2} width={CHIP_W} height={CHIP_H} rx="10" fill="#f7f5f0" stroke="#e6e1d8" />
+            <g transform={`translate(${CHIP_X + 22} ${cy - 16})`} className="text-brand">{c.svgIcon}</g>
+            <text x={CHIP_X + 70} y={cy + 5} fill="#1f2a28" fontSize="15.5" fontWeight="600">{c.label}</text>
+          </g>
+        )
+      })}
+
+      {/* business memory */}
+      <circle cx={MEMORY.cx} cy={MEMORY.cy} r={MEMORY.r} fill="#f7f5f0" stroke="#e6e1d8" />
+      <Brain x={MEMORY.cx - 24} y={MEMORY.cy - 50} size={48} className="text-brand" {...iconStroke} />
+      <text x={MEMORY.cx} y={MEMORY.cy + 22} {...label} fontSize="13.5">Business</text>
+      <text x={MEMORY.cx} y={MEMORY.cy + 39} {...label} fontSize="13.5">Memory</text>
+
+      {/* successor */}
+      <circle cx={SUCC.cx} cy={SUCC.cy} r={SUCC.r} fill="#f7f5f0" stroke="#e6e1d8" />
+      <Person x={SUCC.cx - 20} y={SUCC.cy - 20} size={40} className="text-brand" {...iconStroke} />
+      <text x={SUCC.cx} y={SUCC.cy + SUCC.r + 24} {...label}>Prepared</text>
+      <text x={SUCC.cx} y={SUCC.cy + SUCC.r + 42} {...label}>successor</text>
+
+      {/* ai agents */}
+      <ShieldSparkle x={SHIELD.cx - 40} y={SHIELD.cy - 40} size={80} className="text-brand" {...iconStroke} />
+      <text x={SHIELD.cx} y={SHIELD.cy + 64} {...label}>AI agents the business</text>
+      <text x={SHIELD.cx} y={SHIELD.cy + 82} {...label}>can keep using</text>
+    </svg>
   )
 }
 
@@ -130,7 +153,7 @@ export default function Home() {
       <main>
         {/* Hero */}
         <section className="bg-page">
-          <Container className="grid items-start gap-10 pb-6 pt-8 lg:grid-cols-[1fr_1.45fr]">
+          <Container className="grid items-start gap-10 pb-6 pt-8 lg:grid-cols-[1.05fr_1.5fr]">
             <div>
               <Eyebrow>For retiring SME owners</Eyebrow>
               <h1 className="mt-4 font-serif text-[38px] leading-[1.12] text-ink sm:text-[44px]">
@@ -141,15 +164,15 @@ export default function Home() {
                 company work, verifies that the next team understands them, and turns them into AI
                 agents the business can keep using.
               </p>
-              <div className="mt-7 flex flex-wrap items-center gap-8">
-                <PrimaryButton>Book a founder scan</PrimaryButton>
-                <ArrowLink to="/how-it-works#ask">See the Owner Memory Agent</ArrowLink>
+              <div className="mt-7 flex flex-wrap items-center gap-6">
+                <PrimaryButton className="px-5">Book a founder scan</PrimaryButton>
+                <ArrowLink to="/how-it-works#ask" className="whitespace-nowrap">See the Owner Memory Agent</ArrowLink>
               </div>
               <p className="mt-7 inline-flex items-center gap-2.5 text-[13px] text-body">
                 <ShieldCheck size={18} className="text-brand" /> Designed for owners planning to step back, sell or hand over.
               </p>
             </div>
-            <div className="hidden pt-4 lg:block">
+            <div className="hidden pt-2 lg:block">
               <HeroDiagram />
             </div>
           </Container>

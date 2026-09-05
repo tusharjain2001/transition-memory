@@ -486,7 +486,8 @@ export const Dash = (p) => (
 export const ShieldSparkle = (p) => (
   <Svg {...p}>
     <path d="M24 5l15 5v13c0 10-7 17-15 20-8-3-15-10-15-20V10z" />
-    <path d="M24 15v14M17 22h14M19.5 17.5l9 9M28.5 17.5l-9 9" strokeWidth="1.2" />
+    <path d="M22 16c.6 4.5 2.5 6.4 7 7-4.5.6-6.4 2.5-7 7-.6-4.5-2.5-6.4-7-7 4.5-.6 6.4-2.5 7-7z" strokeWidth="1.3" strokeLinejoin="round" />
+    <path d="M32 12c.3 2 1 2.7 3 3-2 .3-2.7 1-3 3-.3-2-1-2.7-3-3 2-.3 2.7-1 3-3z" strokeWidth="1.1" strokeLinejoin="round" />
   </Svg>
 )
 
