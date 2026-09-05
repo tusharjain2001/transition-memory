@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "Nunito Sans", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+
+  --color-brand: #08463e;        /* deep green bands & buttons */
+  --color-brand-dark: #05473f;   /* footer */
+  --color-ink: #1f5c54;          /* serif heading text */
+  --color-ink-soft: #256b62;     /* card titles */
+  --color-body: #4b5654;         /* body copy */
+  --color-muted: #7d8886;        /* captions */
+  --color-cream: #f8f5f1;        /* beige band */
+  --color-cream-soft: #f9f6f2;   /* "is not" panel */
+  --color-mint: #ecf2ee;         /* light green section */
+  --color-mint-soft: #edf3ef;    /* "is" panel */
+  --color-mint-deep: #d3e7e1;    /* pale teal circles */
+  --color-line: #e6e1d8;         /* card borders */
+  --color-line-soft: #e0e6e0;
+  --color-page: #fcfcfc;
+}
+
+html { scroll-behavior: smooth; }
+.font-serif { font-variant-numeric: lining-nums; }
+body {
+  @apply bg-page text-body font-sans antialiased;
+}
+
+/* Shield badge inside the drawers icon should match the dark band behind it */
+.mission-drawers path[fill="#fff"] { fill: var(--color-brand); }
