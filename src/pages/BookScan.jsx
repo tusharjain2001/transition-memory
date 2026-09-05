@@ -66,9 +66,9 @@ const faqRight = [
 ]
 
 const inputCls =
-  'w-full rounded-md border border-line bg-white px-3.5 py-2.5 text-[13.5px] text-[#1f2a28] placeholder:text-muted focus:border-brand focus:outline-none'
-const labelCls = 'mb-1.5 block text-[13px] text-[#1f2a28]'
-const groupCls = 'text-[14.5px] font-bold text-brand'
+  'w-full rounded-md border border-line bg-white px-3.5 py-2.5 text-[14.5px] text-[#1f2a28] placeholder:text-muted focus:border-brand focus:outline-none'
+const labelCls = 'mb-1.5 block text-[14px] text-[#1f2a28]'
+const groupCls = 'text-[15.5px] font-bold text-brand'
 
 function Field({ label, children }) {
   return (
@@ -109,8 +109,8 @@ function FaqCard({ items }) {
           className="flex w-full items-start justify-between gap-4 px-5 py-3.5 text-left"
         >
           <div>
-            <p className="text-[13.5px] font-semibold text-[#1f2a28]">{f.q}</p>
-            {open[i] && <p className="mt-1 text-[12.5px] text-body">{f.a}</p>}
+            <p className="text-[14.5px] font-semibold text-[#1f2a28]">{f.q}</p>
+            {open[i] && <p className="mt-1 text-[13.5px] text-body">{f.a}</p>}
           </div>
           <ChevronDown size={16} className={`mt-1 flex-shrink-0 text-brand transition-transform ${open[i] ? '' : '-rotate-90'}`} />
         </button>
@@ -147,20 +147,20 @@ export default function BookScan() {
             <h1 className="mx-auto mt-3 max-w-[640px] font-serif text-[36px] leading-[1.15] text-ink sm:text-[42px]">
               Find out where the business still depends on you.
             </h1>
-            <p className="mx-auto mt-4 max-w-[560px] text-[14.5px] leading-[1.7] text-body">
+            <p className="mx-auto mt-4 max-w-[560px] text-[15.5px] leading-[1.7] text-body">
               The scan identifies the customers, suppliers, decisions and operations that may be
               difficult to transfer before retirement, sale or handover.
             </p>
             <p className="mt-5 font-serif text-ink">
               <span className="text-[50px] leading-none">£500</span>
-              <span className="ml-2 text-[22px]">+ VAT</span>
+              <span className="ml-2 text-[24px]">+ VAT</span>
             </p>
-            <p className="mt-2 text-[13px] text-body">Credited against a full TransitionMemory engagement if you proceed.</p>
+            <p className="mt-2 text-[14px] text-body">Credited against a full TransitionMemory engagement if you proceed.</p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-10">
               {highlights.map((h) => (
                 <div key={h.text} className="flex items-center gap-4">
                   <span className="flex h-[52px] w-[52px] items-center justify-center rounded-full border border-brand/70 text-brand">{h.icon}</span>
-                  <span className="whitespace-pre-line text-left text-[13px] leading-snug text-body">{h.text}</span>
+                  <span className="whitespace-pre-line text-left text-[14px] leading-snug text-body">{h.text}</span>
                 </div>
               ))}
             </div>
@@ -171,30 +171,30 @@ export default function BookScan() {
         <section className="bg-page">
           <Container className="grid gap-6 pb-8 lg:grid-cols-[1fr_2.1fr]">
             <div className="rounded-xl border border-line bg-[#f2f5f3] px-6 pb-7 pt-7">
-              <h2 className="font-serif text-[27px] text-ink">Before you book</h2>
+              <h2 className="font-serif text-[30px] text-ink">Before you book</h2>
               <CheckList items={before} size="sm" className="mt-6 space-y-5" />
               <div className="mt-8 flex gap-4 rounded-lg border border-[#f0dfc6] bg-[#fbf3e8] px-4 py-4">
                 <Warning size={30} className="flex-shrink-0 text-[#8a6a3a]" />
-                <div className="text-[12.5px] leading-[1.6] text-[#1f2a28]">
+                <div className="text-[13.5px] leading-[1.6] text-[#1f2a28]">
                   <p>Please do not send confidential documents yet.</p>
                   <p className="mt-3">We agree information scope and handling separately if further evidence is needed.</p>
                 </div>
               </div>
-              <Link to="/how-it-works" className="mt-10 inline-flex items-center gap-2.5 border-b-2 border-brand pb-0.5 text-[13.5px] font-semibold text-brand">
+              <Link to="/how-it-works" className="mt-10 inline-flex items-center gap-2.5 border-b-2 border-brand pb-0.5 text-[14.5px] font-semibold text-brand">
                 See how the scan works <ArrowSm />
               </Link>
             </div>
 
             <Card className="px-7 pb-7 pt-6">
               <Eyebrow>Scan application</Eyebrow>
-              <h2 className="mt-1 font-serif text-[27px] text-ink">Tell us about your business</h2>
-              <p className="mt-1 text-[13px] text-body">This should take around three minutes.</p>
+              <h2 className="mt-1 font-serif text-[30px] text-ink">Tell us about your business</h2>
+              <p className="mt-1 text-[14px] text-body">This should take around three minutes.</p>
 
               {submitted ? (
                 <div className="mt-8 rounded-lg bg-mint-soft px-6 py-8 text-center">
                   <CheckCircle size={40} className="mx-auto text-brand" />
-                  <h3 className="mt-4 font-serif text-[22px] text-ink">Request received</h3>
-                  <p className="mt-2 text-[13.5px] text-body">Thank you. We will review your request and reply to {form.email || 'your work email'} shortly.</p>
+                  <h3 className="mt-4 font-serif text-[24px] text-ink">Request received</h3>
+                  <p className="mt-2 text-[14.5px] text-body">Thank you. We will review your request and reply to {form.email || 'your work email'} shortly.</p>
                 </div>
               ) : (
                 <form onSubmit={onSubmit} className="mt-5 space-y-5">
@@ -237,7 +237,7 @@ export default function BookScan() {
                             }`}
                           >
                             <span className="text-brand">{p.icon}</span>
-                            <span className="whitespace-pre-line text-[12px] leading-tight text-[#1f2a28]">{p.label}</span>
+                            <span className="whitespace-pre-line text-[13px] leading-tight text-[#1f2a28]">{p.label}</span>
                           </button>
                         )
                       })}
@@ -252,7 +252,7 @@ export default function BookScan() {
                     <label className={labelCls}>Has a successor or buyer been identified?</label>
                     <div className="flex flex-wrap gap-8">
                       {['Yes', 'No', 'Not yet confirmed'].map((o) => (
-                        <label key={o} className="inline-flex items-center gap-2.5 text-[13.5px] text-[#1f2a28]">
+                        <label key={o} className="inline-flex items-center gap-2.5 text-[14.5px] text-[#1f2a28]">
                           <input type="radio" name="successor" value={o} checked={form.successor === o} onChange={set('successor')} className="h-[18px] w-[18px] accent-brand" />
                           {o}
                         </label>
@@ -269,21 +269,21 @@ export default function BookScan() {
                       value={form.depends}
                       onChange={set('depends')}
                     />
-                    <p className="mt-1.5 text-[12px] text-muted">Do not include personal, sensitive or confidential information.</p>
+                    <p className="mt-1.5 text-[13px] text-muted">Do not include personal, sensitive or confidential information.</p>
                   </div>
 
-                  <label className="flex items-start gap-3 text-[13px] leading-snug text-[#1f2a28]">
+                  <label className="flex items-start gap-3 text-[14px] leading-snug text-[#1f2a28]">
                     <input type="checkbox" checked={form.agree} onChange={set('agree')} required className="mt-0.5 h-[18px] w-[18px] flex-shrink-0 rounded border-line accent-brand" />
                     I understand that the Founder Dependency Scan costs £500 plus VAT and that no work begins until the scope is confirmed.
                   </label>
 
                   <button
                     type="submit"
-                    className="w-full rounded-md bg-brand py-3 text-[15px] font-semibold text-white shadow-sm transition hover:bg-brand-dark"
+                    className="w-full rounded-md bg-brand py-3 text-[16px] font-semibold text-white shadow-sm transition hover:bg-brand-dark"
                   >
                     Request a founder scan
                   </button>
-                  <p className="text-[12.5px] leading-[1.7] text-body">
+                  <p className="text-[13.5px] leading-[1.7] text-body">
                     We will use these details only to review and respond to your request.
                     <br />
                     Read our <a href="#privacy" className="border-b-2 border-brand font-semibold text-brand">Privacy notice</a>.
@@ -306,11 +306,11 @@ export default function BookScan() {
                       <span className="flex h-[64px] w-[64px] flex-shrink-0 items-center justify-center rounded-full border border-brand/60 bg-white text-brand">{s.icon}</span>
                       {i < after.length - 1 && <span className="hidden flex-1 border-t-2 border-dotted border-brand/70 lg:block" />}
                     </div>
-                    <p className="mt-4 text-[15px] text-ink">
+                    <p className="mt-4 text-[16px] text-ink">
                       <span className="font-sans font-bold text-brand">{s.n}</span>
-                      <span className="ml-2 font-serif text-[18px]">{s.title}</span>
+                      <span className="ml-2 font-serif text-[19px]">{s.title}</span>
                     </p>
-                    <p className="mt-1.5 max-w-[220px] text-[13px] leading-[1.6] text-body">{s.body}</p>
+                    <p className="mt-1.5 max-w-[220px] text-[14px] leading-[1.6] text-body">{s.body}</p>
                   </div>
                 ))}
               </div>
@@ -327,8 +327,8 @@ export default function BookScan() {
                 <Card key={e.title} className="flex gap-4 px-5 py-5">
                   <div className="flex-shrink-0 text-brand">{e.icon}</div>
                   <div>
-                    <h3 className="font-serif text-[18px] text-ink-soft">{e.title}</h3>
-                    <p className="mt-1 text-[12.5px] leading-[1.6] text-body">{e.body}</p>
+                    <h3 className="font-serif text-[19px] text-ink-soft">{e.title}</h3>
+                    <p className="mt-1 text-[13.5px] leading-[1.6] text-body">{e.body}</p>
                   </div>
                 </Card>
               ))}
@@ -341,11 +341,11 @@ export default function BookScan() {
           <Container className="pb-6">
             <div className="grid gap-8 rounded-xl bg-brand px-8 pb-8 pt-6 text-white lg:grid-cols-[1fr_1px_1fr]">
               <div>
-                <h2 className="font-serif text-[25px]">Your Founder Dependency Map</h2>
+                <h2 className="font-serif text-[27px]">Your Founder Dependency Map</h2>
                 <p className="mt-1 text-[10.5px] font-bold uppercase tracking-[0.14em] text-white/90">Illustrative example</p>
                 <div className="mt-4 divide-y divide-line overflow-hidden rounded-md bg-white">
                   {heat.map(([label, level]) => (
-                    <div key={label} className="flex items-center justify-between px-5 py-2.5 text-[13.5px] text-brand">
+                    <div key={label} className="flex items-center justify-between px-5 py-2.5 text-[14.5px] text-brand">
                       <span>{label}</span>
                       <span className="flex items-center gap-3">
                         <span className={`h-2.5 w-2.5 rounded-full ${level === 'Medium' ? 'bg-[#f2b134]' : 'bg-[#e0332b]'}`} />
@@ -357,7 +357,7 @@ export default function BookScan() {
               </div>
               <div className="hidden bg-white/40 lg:block" />
               <div className="lg:pl-2">
-                <h2 className="font-serif text-[25px]">Priority transfer plan</h2>
+                <h2 className="font-serif text-[27px]">Priority transfer plan</h2>
                 <CheckList items={plan} light className="mt-6 space-y-5" />
               </div>
             </div>
@@ -369,14 +369,14 @@ export default function BookScan() {
           <Container className="pb-6">
             <Card className="grid gap-8 px-7 pb-7 pt-6 lg:grid-cols-[1.2fr_1.2fr_1fr] lg:divide-x lg:divide-line">
               <div>
-                <h3 className="font-serif text-[22px] text-ink">What the £500 scan includes</h3>
+                <h3 className="font-serif text-[24px] text-ink">What the £500 scan includes</h3>
                 <CheckList items={includes} size="sm" className="mt-3 space-y-2" />
               </div>
               <div className="lg:pl-8">
-                <h3 className="font-serif text-[22px] text-ink">What it does not include</h3>
+                <h3 className="font-serif text-[24px] text-ink">What it does not include</h3>
                 <ul className="mt-3 space-y-2">
                   {excludes.map((t) => (
-                    <li key={t} className="flex items-center gap-3.5 text-[13px] text-body">
+                    <li key={t} className="flex items-center gap-3.5 text-[14px] text-body">
                       <XCircle size={17} className="flex-shrink-0 text-[#9a8a6a]" /> {t}
                     </li>
                   ))}
@@ -384,7 +384,7 @@ export default function BookScan() {
               </div>
               <div className="flex items-center gap-4 lg:pl-8">
                 <ShieldCheck size={52} className="flex-shrink-0 text-brand" />
-                <p className="text-[13px] leading-[1.6] text-body">
+                <p className="text-[14px] leading-[1.6] text-body">
                   These are available through Verified Owner Transfer{' '}
                   <Link to="/pricing" className="border-b-2 border-brand font-semibold text-brand">from £5,000 per company.</Link>
                 </p>
@@ -396,7 +396,7 @@ export default function BookScan() {
         {/* Common questions */}
         <section className="bg-page">
           <Container className="pb-6">
-            <p className="text-[14px] font-semibold text-[#1f2a28]">Common questions</p>
+            <p className="text-[15px] font-semibold text-[#1f2a28]">Common questions</p>
             <div className="mt-2 grid gap-5 md:grid-cols-2">
               <FaqCard items={faqLeft} />
               <FaqCard items={faqRight} />
@@ -412,14 +412,14 @@ export default function BookScan() {
                 <TwoPeopleCheck size={42} />
               </span>
               <div className="flex-1">
-                <h2 className="font-serif text-[26px] leading-tight text-ink">Make the first step a clear picture of the dependency.</h2>
-                <p className="mt-2 text-[13.5px] text-body">Request the £500 Founder Dependency Scan.</p>
+                <h2 className="font-serif text-[28px] leading-tight text-ink">Make the first step a clear picture of the dependency.</h2>
+                <p className="mt-2 text-[14.5px] text-body">Request the £500 Founder Dependency Scan.</p>
               </div>
               <div className="flex flex-col items-center gap-3">
-                <a href="#top" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }} className="rounded-md bg-brand px-8 py-2.5 text-[14px] font-semibold text-white shadow-sm hover:bg-brand-dark">
+                <a href="#top" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }} className="rounded-md bg-brand px-8 py-2.5 text-[15px] font-semibold text-white shadow-sm hover:bg-brand-dark">
                   Request a founder scan
                 </a>
-                <a href="#contact" className="border-b-2 border-brand pb-0.5 text-[13.5px] font-semibold text-brand">Talk to us</a>
+                <a href="#contact" className="border-b-2 border-brand pb-0.5 text-[14.5px] font-semibold text-brand">Talk to us</a>
               </div>
             </div>
           </Container>

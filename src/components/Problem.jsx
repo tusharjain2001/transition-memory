@@ -21,8 +21,8 @@ const items = [
 export default function Problem() {
   return (
     <section className="bg-page">
-      <div className="mx-auto max-w-[1180px] px-6 pb-16 pt-12 lg:px-10">
-        <h2 className="text-center font-serif text-[27px] text-ink">The problem we are here to solve</h2>
+      <div className="mx-auto max-w-[1260px] px-6 pb-16 pt-12 lg:px-10">
+        <h2 className="text-center font-serif text-[30px] text-ink">The problem we are here to solve</h2>
         <div className="mx-auto mt-8 grid max-w-[1000px] gap-8 md:grid-cols-3">
           {items.map((it) => (
             <div
@@ -32,10 +32,10 @@ export default function Problem() {
               <div className="mx-auto flex h-[68px] w-[68px] items-center justify-center rounded-full border border-brand/70 text-brand">
                 {it.icon}
               </div>
-              <h3 className="mt-6 whitespace-pre-line font-serif text-[21px] leading-[1.25] text-ink-soft">
+              <h3 className="mt-6 whitespace-pre-line font-serif text-[23px] leading-[1.25] text-ink-soft">
                 {it.title}
               </h3>
-              <p className="mt-4 text-left text-[13.5px] leading-[1.75] text-body">{it.body}</p>
+              <p className="mt-4 text-left text-[14.5px] leading-[1.75] text-body">{it.body}</p>
             </div>
           ))}
         </div>

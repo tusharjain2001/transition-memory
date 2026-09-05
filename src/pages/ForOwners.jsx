@@ -25,7 +25,7 @@ const transitions = [
 
 const heat = [
   { icon: <TwoPeople size={26} />, label: 'Key customers', level: 'High' },
-  { icon: <span className="flex h-6 w-6 items-center justify-center rounded-full border border-white text-[13px] font-serif">£</span>, label: 'Pricing decisions', level: 'High' },
+  { icon: <span className="flex h-6 w-6 items-center justify-center rounded-full border border-white text-[14px] font-serif">£</span>, label: 'Pricing decisions', level: 'High' },
   { icon: <Handshake size={26} />, label: 'Supplier escalation', level: 'Medium' },
   { icon: <Gear size={26} />, label: 'Operational exceptions', level: 'High' },
 ]
@@ -92,13 +92,13 @@ export default function ForOwners() {
       <main>
         {/* Hero */}
         <section id="owners" className="bg-page">
-          <Container className="grid items-start gap-12 pb-12 pt-8 lg:grid-cols-[1fr_1.15fr]">
+          <Container className="grid items-start gap-12 pb-12 pt-8 lg:grid-cols-[1fr_1.35fr]">
             <div>
               <Eyebrow>For SME owners</Eyebrow>
               <h1 className="mt-4 font-serif text-[38px] leading-[1.12] text-ink sm:text-[44px] lg:text-[46px]">
                 Step back without taking the business with you.
               </h1>
-              <p className="mt-6 max-w-[520px] text-[14.5px] leading-[1.7] text-body">
+              <p className="mt-6 max-w-[520px] text-[15.5px] leading-[1.7] text-body">
                 You have spent years learning which customers need special handling, which suppliers
                 can be trusted and what to do when the usual process fails. TransitionMemory helps
                 turn that experience into capability the business keeps.
@@ -107,7 +107,7 @@ export default function ForOwners() {
                 <PrimaryButton>Book a founder scan</PrimaryButton>
                 <ArrowLink to="/how-it-works">See how it works</ArrowLink>
               </div>
-              <p className="mt-6 max-w-[360px] text-[13px] leading-[1.6] text-body">
+              <p className="mt-6 max-w-[360px] text-[14px] leading-[1.6] text-body">
                 For retirement, sale, family succession or management handover.
               </p>
             </div>
@@ -120,8 +120,8 @@ export default function ForOwners() {
         {/* Cream band */}
         <section className="bg-cream">
           <Container className="py-9 text-center">
-            <h2 className="font-serif text-[27px] text-ink">Your experience is part of the company's value.</h2>
-            <p className="mx-auto mt-3 max-w-[600px] text-[13.5px] leading-[1.7] text-body">
+            <h2 className="font-serif text-[30px] text-ink">Your experience is part of the company's value.</h2>
+            <p className="mx-auto mt-3 max-w-[600px] text-[14.5px] leading-[1.7] text-body">
               TransitionMemory helps preserve it without asking you to write a manual, remember
               everything at once or remain permanently on call.
             </p>
@@ -144,14 +144,14 @@ export default function ForOwners() {
         <section className="bg-brand text-white">
           <Container className="grid gap-10 py-10 lg:grid-cols-[1fr_1px_1.2fr]">
             <div>
-              <h2 className="font-serif text-[27px] leading-[1.2]">How much of the company still depends on you?</h2>
+              <h2 className="font-serif text-[30px] leading-[1.2]">How much of the company still depends on you?</h2>
               <div className="mt-6">
                 <HeatTable rows={heat} />
               </div>
             </div>
             <div className="hidden bg-white/40 lg:block" />
             <div className="lg:pl-4">
-              <h2 className="font-serif text-[24px]">Common signs</h2>
+              <h2 className="font-serif text-[26px]">Common signs</h2>
               <CheckList items={signs} light className="mt-6 space-y-4" />
               <ArrowLink light className="mt-8" href="#book">
                 Start with the Founder Dependency Scan
@@ -167,7 +167,7 @@ export default function ForOwners() {
             <div className="mt-8">
               <NumberedSteps steps={steps} />
             </div>
-            <p className="mt-10 text-center text-[14px] text-brand">
+            <p className="mt-10 text-center text-[15px] text-brand">
               The process is planned around your availability and intended transition date.
             </p>
 
@@ -175,14 +175,14 @@ export default function ForOwners() {
               <div className="rounded-xl border border-[#dde6df] bg-mint-soft px-7 pb-7 pt-6">
                 <div className="flex items-center gap-5">
                   <ShieldCheck size={44} className="text-brand" />
-                  <h3 className="font-serif text-[24px] text-ink">You decide</h3>
+                  <h3 className="font-serif text-[26px] text-ink">You decide</h3>
                 </div>
                 <CheckList items={youDecide} size="sm" className="mt-5 pl-1" />
               </div>
               <div className="rounded-xl border border-[#ece6dc] bg-cream-soft px-7 pb-7 pt-6">
                 <div className="flex items-center gap-5">
                   <Lock size={44} className="text-brand" />
-                  <h3 className="font-serif text-[24px] text-ink">TransitionMemory will not</h3>
+                  <h3 className="font-serif text-[26px] text-ink">TransitionMemory will not</h3>
                 </div>
                 <CheckList items={willNot} size="sm" className="mt-5 pl-1" />
               </div>
@@ -194,27 +194,27 @@ export default function ForOwners() {
         <section className="bg-mint">
           <Container className="grid gap-10 py-10 lg:grid-cols-[1.4fr_1fr]">
             <div>
-              <h2 className="font-serif text-[27px] text-ink">The business can still ask why.</h2>
+              <h2 className="font-serif text-[30px] text-ink">The business can still ask why.</h2>
               <div className="mt-5 flex items-start gap-3">
                 <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-white text-brand">
                   <Person size={26} />
                 </span>
-                <div className="rounded-lg bg-white px-5 py-3 text-[13.5px] text-body">Why do we use this supplier?</div>
+                <div className="rounded-lg bg-white px-5 py-3 text-[14.5px] text-body">Why do we use this supplier?</div>
               </div>
               <div className="mt-3 flex items-start gap-3">
                 <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-lg bg-white text-brand">
                   <Brain size={26} />
                 </span>
                 <div className="rounded-lg bg-white px-5 py-4">
-                  <p className="text-[13.5px] leading-[1.55] text-[#1f2a28]">
+                  <p className="text-[14.5px] leading-[1.55] text-[#1f2a28]">
                     The founder identified reliability during peak periods and direct access to the
                     service manager as the main reasons. A lower-cost alternative was tested in 2024
                     but caused delivery delays.
                   </p>
                   <div className="mt-4 flex flex-wrap items-center gap-2">
-                    <span className="rounded bg-mint px-3 py-1 text-[11.5px] text-brand">Founder interview</span>
-                    <span className="rounded bg-mint px-3 py-1 text-[11.5px] text-brand">Supplier review</span>
-                    <span className="ml-auto inline-flex items-center gap-1.5 text-[11.5px] text-body">
+                    <span className="rounded bg-mint px-3 py-1 text-[12.5px] text-brand">Founder interview</span>
+                    <span className="rounded bg-mint px-3 py-1 text-[12.5px] text-brand">Supplier review</span>
+                    <span className="ml-auto inline-flex items-center gap-1.5 text-[12.5px] text-body">
                       <ShieldCheck size={14} className="text-brand" /> Supported by 2 sources
                     </span>
                   </div>
@@ -234,14 +234,14 @@ export default function ForOwners() {
         <section className="bg-page">
           <Container className="pb-8 pt-10">
             <SectionTitle>What you leave behind</SectionTitle>
-            <p className="mt-2 text-center text-[13.5px] text-body">
+            <p className="mt-2 text-center text-[14.5px] text-body">
               A clearer, more independent business for the people taking responsibility next.
             </p>
             <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
               {leaveBehind.map((l) => (
                 <Card key={l.title} className="flex flex-col items-center px-3 pb-6 pt-6 text-center">
                   <div className="text-brand">{l.icon}</div>
-                  <p className="mt-4 whitespace-pre-line font-serif text-[15px] leading-[1.3] text-ink-soft">{l.title}</p>
+                  <p className="mt-4 whitespace-pre-line font-serif text-[16px] leading-[1.3] text-ink-soft">{l.title}</p>
                 </Card>
               ))}
             </div>
@@ -254,10 +254,10 @@ export default function ForOwners() {
             <SectionTitle>Start with the dependency—not the full project.</SectionTitle>
             <div className="mx-auto mt-6 grid max-w-[1000px] gap-6 md:grid-cols-2">
               <Card className="px-8 pb-5 pt-6">
-                <h3 className="font-serif text-[22px] text-ink-soft">Founder Dependency Scan</h3>
+                <h3 className="font-serif text-[24px] text-ink-soft">Founder Dependency Scan</h3>
                 <p className="mt-1 font-serif text-ink">
-                  <span className="text-[26px]">£500</span>
-                  <span className="ml-2 font-sans text-[16px] text-body">+ VAT</span>
+                  <span className="text-[28px]">£500</span>
+                  <span className="ml-2 font-sans text-[17px] text-body">+ VAT</span>
                 </p>
                 <CheckList
                   plain size="sm" className="mt-3 space-y-1.5"
@@ -265,17 +265,17 @@ export default function ForOwners() {
                 />
                 <div className="mt-4 text-center">
                   <PrimaryButton className="w-full max-w-[320px] py-2.5">Book a founder scan</PrimaryButton>
-                  <p className="mt-3 text-[11.5px] text-body">
+                  <p className="mt-3 text-[12.5px] text-body">
                     The £500 fee is credited against a full engagement if you proceed.
                   </p>
                 </div>
               </Card>
               <Card className="px-8 pb-5 pt-6">
-                <h3 className="font-serif text-[22px] text-ink-soft">Verified Owner Transfer</h3>
+                <h3 className="font-serif text-[24px] text-ink-soft">Verified Owner Transfer</h3>
                 <p className="mt-1 font-serif text-ink">
-                  <span className="text-[20px]">From </span>
-                  <span className="text-[26px]">£5,000</span>
-                  <span className="ml-2 font-sans text-[16px] text-body">per company</span>
+                  <span className="text-[22px]">From </span>
+                  <span className="text-[28px]">£5,000</span>
+                  <span className="ml-2 font-sans text-[17px] text-body">per company</span>
                 </p>
                 <CheckList
                   plain size="sm" className="mt-3 space-y-1.5"
@@ -292,7 +292,7 @@ export default function ForOwners() {
         {/* FAQ */}
         <section className="bg-page">
           <Container className="pb-10 pt-4">
-            <SectionTitle className="text-[24px]">Questions owners often ask</SectionTitle>
+            <SectionTitle className="text-[26px]">Questions owners often ask</SectionTitle>
             <div className="mt-5">
               <FAQ items={faq} />
             </div>

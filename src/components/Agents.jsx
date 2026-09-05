@@ -11,10 +11,10 @@ const agents = [
 export default function Agents() {
   return (
     <section className="bg-mint">
-      <div className="mx-auto grid max-w-[1180px] gap-10 px-6 py-12 lg:grid-cols-[270px_1fr] lg:px-10">
+      <div className="mx-auto grid max-w-[1260px] gap-10 px-6 py-12 lg:grid-cols-[270px_1fr] lg:px-10">
         <div className="lg:pl-16">
-          <h2 className="font-serif text-[27px] text-ink">Why AI agents?</h2>
-          <p className="mt-5 text-[13.5px] leading-[1.75] text-body">
+          <h2 className="font-serif text-[30px] text-ink">Why AI agents?</h2>
+          <p className="mt-5 text-[14.5px] leading-[1.75] text-body">
             A static handover becomes harder to use and easier to forget. Controlled AI agents can
             interview adaptively, identify missing context, organise approved knowledge and help
             successors find the right explanation when it is needed.
@@ -28,14 +28,14 @@ export default function Agents() {
                 className="flex flex-col items-center rounded-xl border border-line-soft bg-white px-2 pb-6 pt-7 text-center"
               >
                 <div className="text-brand">{a.icon}</div>
-                <h3 className="mt-5 whitespace-nowrap font-serif text-[13.5px] leading-tight tracking-tight text-ink-soft">{a.name}</h3>
-                <p className="mt-3 whitespace-pre-line font-serif text-[14px] leading-[1.35] text-ink-soft/90">
+                <h3 className="mt-5 font-serif md:whitespace-nowrap text-[14.5px] leading-tight tracking-tight text-ink-soft">{a.name}</h3>
+                <p className="mt-3 whitespace-pre-line font-serif text-[15px] leading-[1.35] text-ink-soft/90">
                   {a.body}
                 </p>
               </div>
             ))}
           </div>
-          <p className="mt-6 max-w-[560px] text-[13.5px] leading-[1.7] text-body">
+          <p className="mt-6 max-w-[560px] text-[14.5px] leading-[1.7] text-body">
             The agents support human decisions. They do not impersonate the owner or make
             autonomous commitments.
           </p>

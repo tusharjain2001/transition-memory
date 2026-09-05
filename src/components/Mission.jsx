@@ -3,14 +3,14 @@ import { Building, Drawers, TwoPeople, DottedArrow } from './Icons'
 export default function Mission() {
   return (
     <section className="bg-brand text-white">
-      <div className="mx-auto max-w-[1180px] px-6 pb-16 pt-12 text-center lg:px-10">
-        <p className="font-serif text-[20px]">Our mission</p>
+      <div className="mx-auto max-w-[1260px] px-6 pb-16 pt-12 text-center lg:px-10">
+        <p className="font-serif text-[22px]">Our mission</p>
         <h2 className="mx-auto mt-2 max-w-[820px] font-serif text-[32px] leading-[1.2] sm:text-[38px]">
           Make established businesses transferable—
           <br className="hidden sm:block" />
           not founder-dependent.
         </h2>
-        <p className="mx-auto mt-5 max-w-[660px] text-[14.5px] leading-[1.7] text-white/90">
+        <p className="mx-auto mt-5 max-w-[660px] text-[15.5px] leading-[1.7] text-white/90">
           We want practical business knowledge to become a durable company asset rather than an
           informal responsibility carried indefinitely by one person.
         </p>
@@ -43,7 +43,7 @@ function Step({ children, label }) {
   return (
     <div className="flex flex-col items-center">
       {children}
-      <p className="mt-6 text-[14.5px] font-semibold text-white">{label}</p>
+      <p className="mt-6 text-[15.5px] font-semibold text-white">{label}</p>
     </div>
   )
 }

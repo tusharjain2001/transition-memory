@@ -27,8 +27,8 @@ const items = [
 export default function WhoFor() {
   return (
     <section className="bg-page">
-      <div className="mx-auto max-w-[1180px] px-6 pb-14 pt-2 lg:px-10">
-        <h2 className="text-center font-serif text-[27px] text-ink">Who we are building for</h2>
+      <div className="mx-auto max-w-[1260px] px-6 pb-14 pt-2 lg:px-10">
+        <h2 className="text-center font-serif text-[30px] text-ink">Who we are building for</h2>
         <div className="mx-auto mt-6 grid max-w-[1000px] gap-6 md:grid-cols-3">
           {items.map((it) => (
             <div
@@ -41,14 +41,14 @@ export default function WhoFor() {
                   {it.icon}
                 </div>
                 <div>
-                  <h3 className="whitespace-nowrap font-serif text-[16px] text-ink-soft">{it.title}</h3>
-                  <p className="mt-1.5 text-[13px] leading-[1.65] text-body">{it.body}</p>
+                  <h3 className="font-serif sm:whitespace-nowrap text-[17px] text-ink-soft">{it.title}</h3>
+                  <p className="mt-1.5 text-[14px] leading-[1.65] text-body">{it.body}</p>
                 </div>
               </div>
               {it.link && (
                 <Link
                   to={it.id === 'owners' ? '/for-owners' : '/for-advisers'}
-                  className="mt-5 inline-flex items-center gap-2.5 pl-[92px] text-[13px] font-semibold text-brand hover:underline"
+                  className="mt-5 inline-flex items-center gap-2.5 pl-[92px] text-[14px] font-semibold text-brand hover:underline"
                 >
                   {it.link} <ArrowSm />
                 </Link>

@@ -30,8 +30,8 @@ const items = [
 export default function Principles() {
   return (
     <section className="bg-page">
-      <div className="mx-auto max-w-[1180px] px-6 pb-14 pt-10 lg:px-10">
-        <h2 className="text-center font-serif text-[27px] text-ink">
+      <div className="mx-auto max-w-[1260px] px-6 pb-14 pt-10 lg:px-10">
+        <h2 className="text-center font-serif text-[30px] text-ink">
           The principles shaping TransitionMemory
         </h2>
         <div className="mt-7 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -40,11 +40,11 @@ export default function Principles() {
               key={it.n}
               className="flex min-h-[290px] flex-col rounded-xl border border-line bg-white px-7 pb-6 pt-7 shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
             >
-              <p className="font-serif text-[20px] text-ink">{it.n}</p>
-              <h3 className="mt-3 whitespace-pre-line font-serif text-[21px] leading-[1.22] text-ink-soft">
+              <p className="font-serif text-[22px] text-ink">{it.n}</p>
+              <h3 className="mt-3 whitespace-pre-line font-serif text-[23px] leading-[1.22] text-ink-soft">
                 {it.title}
               </h3>
-              <p className="mt-4 text-[13.5px] leading-[1.7] text-body">{it.body}</p>
+              <p className="mt-4 text-[14.5px] leading-[1.7] text-body">{it.body}</p>
               <div className="mt-auto flex justify-center pt-6 text-brand">{it.icon}</div>
             </div>
           ))}

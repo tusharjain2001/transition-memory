@@ -13,9 +13,9 @@ const links = [
 export default function Footer() {
   return (
     <footer id="contact" className="bg-brand-dark text-white">
-      <div className="mx-auto flex max-w-[1180px] flex-col justify-between gap-4 px-6 py-4 lg:flex-row lg:items-center lg:px-10">
+      <div className="mx-auto flex max-w-[1260px] flex-col justify-between gap-4 px-6 py-4 lg:flex-row lg:items-center lg:px-10">
         <div>
-          <p className="text-[16px] tracking-tight">TransitionMemory</p>
+          <p className="text-[17px] tracking-tight">TransitionMemory</p>
           <p className="mt-1 text-[10.5px] leading-snug text-white/85">
             Make your business transferable—
             <br />
@@ -23,7 +23,7 @@ export default function Footer() {
           </p>
           <p className="mt-1 text-[10.5px] text-white/85">© 2026 TransitionMemory.</p>
         </div>
-        <nav className="flex flex-wrap items-center gap-x-9 gap-y-3 text-[11.5px]">
+        <nav className="flex flex-wrap items-center gap-x-9 gap-y-3 text-[12.5px]">
           {links.map((l) =>
             l.to.startsWith('#') ? (
               <a key={l.label} href={l.to} className="hover:underline">

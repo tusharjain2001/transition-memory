@@ -74,16 +74,16 @@ const faq = [
 ]
 
 const Chip = ({ children }) => (
-  <span className="inline-block rounded bg-mint px-3 py-1 text-[12px] text-brand">{children}</span>
+  <span className="inline-block rounded bg-mint px-3 py-1 text-[13px] text-brand">{children}</span>
 )
 
 function StageCard({ s }) {
   return (
     <Card className="flex gap-4 px-6 pb-5 pt-5">
-      <span className="font-serif text-[30px] leading-none text-ink">{s.n}</span>
+      <span className="font-serif text-[32px] leading-none text-ink">{s.n}</span>
       <div>
-        <h3 className="font-serif text-[20px] leading-tight text-ink-soft">{s.title}</h3>
-        <p className="mt-2 text-[13px] leading-[1.6] text-body">{s.body}</p>
+        <h3 className="font-serif text-[22px] leading-tight text-ink-soft">{s.title}</h3>
+        <p className="mt-2 text-[14px] leading-[1.6] text-body">{s.body}</p>
         <div className="mt-3">
           <Chip>{s.chip}</Chip>
         </div>
@@ -99,13 +99,13 @@ export default function HowItWorks() {
       <main>
         {/* Hero */}
         <section className="bg-page">
-          <Container className="grid items-start gap-10 pb-10 pt-8 lg:grid-cols-[1fr_1.2fr]">
+          <Container className="grid items-start gap-8 pb-10 pt-8 lg:grid-cols-[1fr_1.2fr] lg:gap-10">
             <div>
               <Eyebrow>How it works</Eyebrow>
               <h1 className="mt-4 font-serif text-[38px] leading-[1.12] text-ink sm:text-[44px]">
                 Turn what only you know into capability the business keeps.
               </h1>
-              <p className="mt-6 max-w-[500px] text-[14.5px] leading-[1.7] text-body">
+              <p className="mt-6 max-w-[500px] text-[15.5px] leading-[1.7] text-body">
                 TransitionMemory identifies where the company still depends on you, captures the
                 knowledge behind it, tests the next team and makes the approved Business Memory usable
                 through controlled AI agents.
@@ -115,21 +115,21 @@ export default function HowItWorks() {
                 <ArrowLink href="#ask">See the Owner Memory Agent</ArrowLink>
               </div>
             </div>
-            <div className="pt-6">
-              <div className="flex items-start justify-between">
+            <div className="pt-2 lg:pt-6">
+              <div className="flex flex-wrap items-start justify-center gap-y-5 md:flex-nowrap md:justify-between">
                 {flow.map((f, i) => (
-                  <div key={f.label} className="flex flex-1 items-start">
-                    <div className="flex w-[104px] flex-col items-center text-center">
-                      <div className="flex h-[92px] w-[92px] items-center justify-center rounded-full border border-line bg-cream text-brand">
+                  <div key={f.label} className="flex items-start md:flex-1">
+                    <div className="flex w-[66px] flex-col items-center text-center sm:w-[90px] md:w-[104px]">
+                      <div className="flex h-[58px] w-[58px] items-center justify-center rounded-full border border-line bg-cream text-brand [&_svg]:h-7 [&_svg]:w-7 sm:h-[76px] sm:w-[76px] sm:[&_svg]:h-9 sm:[&_svg]:w-9 md:h-[92px] md:w-[92px] md:[&_svg]:h-10 md:[&_svg]:w-10">
                         {f.icon}
                       </div>
-                      <p className="mt-4 whitespace-pre-line text-[13.5px] font-semibold leading-tight text-[#1f2a28]">{f.label}</p>
+                      <p className="mt-3 whitespace-pre-line text-[12px] font-semibold leading-tight text-[#1f2a28] sm:text-[14.5px] md:mt-4">{f.label}</p>
                     </div>
-                    {i < flow.length - 1 && <span className="mt-[46px] flex-1 border-t border-dotted border-brand" />}
+                    {i < flow.length - 1 && <span className="mt-[46px] hidden flex-1 border-t border-dotted border-brand md:block" />}
                   </div>
                 ))}
               </div>
-              <p className="mt-10 text-center text-[14.5px] text-[#1f2a28]">
+              <p className="mt-6 text-center text-[14px] text-[#1f2a28] md:mt-10 md:text-[15.5px]">
                 Captured. Verified. Available after the handover.
               </p>
             </div>
@@ -139,8 +139,8 @@ export default function HowItWorks() {
         {/* Cream band */}
         <section className="bg-cream">
           <Container className="py-8 text-center">
-            <h2 className="font-serif text-[27px] text-ink">A guided transfer—not a software rollout.</h2>
-            <p className="mx-auto mt-3 max-w-[640px] text-[13.5px] leading-[1.7] text-body">
+            <h2 className="font-serif text-[30px] text-ink">A guided transfer—not a software rollout.</h2>
+            <p className="mx-auto mt-3 max-w-[640px] text-[14.5px] leading-[1.7] text-body">
               During the MVP, our team coordinates every stage. The owner, successor and responsible
               management remain in control of what is captured, approved and used.
             </p>
@@ -159,7 +159,7 @@ export default function HowItWorks() {
                 {stages.map((s, i) => {
                   const left = i % 2 === 0
                   return (
-                    <div key={s.n} className={`relative flex items-center ${i > 0 ? '-mt-6' : ''}`}>
+                    <div key={s.n} className={`relative flex items-center ${i > 0 ? '-mt-14' : ''}`}>
                       {left ? (
                         <>
                           <div className="w-[41%]"><StageCard s={s} /></div>
@@ -197,17 +197,17 @@ export default function HowItWorks() {
         {/* Agents */}
         <section className="bg-brand text-white">
           <Container className="py-9 text-center">
-            <h2 className="font-serif text-[27px]">One Business Memory. Five specialist agents.</h2>
+            <h2 className="font-serif text-[30px]">One Business Memory. Five specialist agents.</h2>
             <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
               {agents.map((a) => (
                 <div key={a.name} className="rounded-xl bg-white px-4 pb-6 pt-6 text-center">
                   <div className="flex justify-center text-brand">{a.icon}</div>
-                  <h3 className="mt-4 text-[15px] font-semibold text-[#1f2a28]">{a.name}</h3>
-                  <p className="mt-1.5 text-[13px] leading-snug text-body">{a.body}</p>
+                  <h3 className="mt-4 text-[16px] font-semibold text-[#1f2a28]">{a.name}</h3>
+                  <p className="mt-1.5 text-[14px] leading-snug text-body">{a.body}</p>
                 </div>
               ))}
             </div>
-            <p className="mt-6 text-[14px]">For the MVP, these agent roles operate within one supervised workflow.</p>
+            <p className="mt-6 text-[15px]">For the MVP, these agent roles operate within one supervised workflow.</p>
           </Container>
         </section>
 
@@ -215,7 +215,7 @@ export default function HowItWorks() {
         <section id="ask" className="bg-page">
           <Container className="grid gap-10 py-10 lg:grid-cols-[1.15fr_1fr]">
             <div>
-              <h2 className="font-serif text-[25px] text-ink lg:pl-14">Ask the business why.</h2>
+              <h2 className="font-serif text-[27px] text-ink lg:pl-14">Ask the business why.</h2>
               <div className="mt-4 space-y-3">
                 {[chat.slice(0, 2), chat.slice(2)].map((pair, pi) => (
                   <Card key={pi} className="divide-y divide-line">
@@ -226,14 +226,14 @@ export default function HowItWorks() {
                         </span>
                         <div className="flex-1">
                           <div className="flex items-baseline justify-between">
-                            <p className="text-[13px] font-semibold text-[#1f2a28]">{m.who}</p>
+                            <p className="text-[14px] font-semibold text-[#1f2a28]">{m.who}</p>
                             <span className="text-[11px] text-muted">{m.time}</span>
                           </div>
-                          <p className="mt-0.5 text-[13.5px] leading-[1.55] text-[#1f2a28]">{m.text}</p>
+                          <p className="mt-0.5 text-[14.5px] leading-[1.55] text-[#1f2a28]">{m.text}</p>
                           {m.chips && (
                             <div className="mt-3 flex flex-wrap items-center gap-2">
                               {m.chips.map((c) => <Chip key={c}>{c}</Chip>)}
-                              <span className="ml-auto inline-flex items-center gap-1.5 text-[11.5px] text-body">
+                              <span className="ml-auto inline-flex items-center gap-1.5 text-[12.5px] text-body">
                                 <ShieldCheck size={16} className="text-brand" /> {m.sources}
                               </span>
                             </div>
@@ -246,7 +246,7 @@ export default function HowItWorks() {
               </div>
             </div>
             <div className="lg:border-l lg:border-line lg:pl-12 lg:pt-8">
-              <h3 className="font-serif text-[24px] text-ink">Every substantive answer should</h3>
+              <h3 className="font-serif text-[26px] text-ink">Every substantive answer should</h3>
               <CheckList items={answerShould} className="mt-6 space-y-4" />
             </div>
           </Container>
@@ -258,10 +258,10 @@ export default function HowItWorks() {
             <SectionTitle>What we need.&nbsp; What you receive.</SectionTitle>
             <div className="mt-6 grid gap-6 md:grid-cols-2">
               <div className="rounded-xl bg-[#e9efeb] px-7 pb-7 pt-6">
-                <h3 className="font-serif text-[22px] text-ink">You provide</h3>
+                <h3 className="font-serif text-[24px] text-ink">You provide</h3>
                 <ul className="mt-4 space-y-4">
                   {provide.map((p) => (
-                    <li key={p.text} className="flex items-center gap-5 text-[13.5px] text-body">
+                    <li key={p.text} className="flex items-center gap-5 text-[14.5px] text-body">
                       <span className="text-brand">{p.icon}</span>
                       {p.text}
                     </li>
@@ -269,10 +269,10 @@ export default function HowItWorks() {
                 </ul>
               </div>
               <div className="rounded-xl border border-line bg-[#f5f5f1] px-7 pb-7 pt-6">
-                <h3 className="font-serif text-[22px] text-ink">What you receive</h3>
+                <h3 className="font-serif text-[24px] text-ink">What you receive</h3>
                 <ul className="mt-4 space-y-3">
                   {receive.map((r) => (
-                    <li key={r.text} className="flex items-center gap-5 text-[13.5px] text-body">
+                    <li key={r.text} className="flex items-center gap-5 text-[14.5px] text-body">
                       <span className="text-brand">{r.icon}</span>
                       {r.text}
                     </li>
@@ -292,8 +292,8 @@ export default function HowItWorks() {
                 <Card key={c.title} className="flex gap-4 px-5 py-5">
                   <div className="flex-shrink-0 text-brand">{c.icon}</div>
                   <div>
-                    <h3 className="text-[14px] font-semibold text-[#1f2a28]">{c.title}</h3>
-                    <p className="mt-1 text-[12.5px] leading-[1.6] text-body">{c.body}</p>
+                    <h3 className="text-[15px] font-semibold text-[#1f2a28]">{c.title}</h3>
+                    <p className="mt-1 text-[13.5px] leading-[1.6] text-body">{c.body}</p>
                   </div>
                 </Card>
               ))}
@@ -307,22 +307,22 @@ export default function HowItWorks() {
             <SectionTitle>Start small.&nbsp; Expand only if the dependency is real.</SectionTitle>
             <div className="mt-6 flex flex-col items-stretch gap-4 md:flex-row md:items-center">
               <Card className="flex flex-1 gap-5 px-6 pb-6 pt-6">
-                <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-brand font-serif text-[22px] text-white">1</span>
+                <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-brand font-serif text-[24px] text-white">1</span>
                 <div>
-                  <h3 className="font-serif text-[22px] text-ink-soft">Founder Dependency Scan</h3>
-                  <p className="font-serif text-ink"><span className="text-[26px]">£500</span><span className="ml-2 font-sans text-[16px] text-body">+ VAT</span></p>
-                  <p className="mt-3 text-[13px] leading-[1.6] text-body">Questionnaire, 60-minute scoping interview, dependency heat map and priority plan.</p>
+                  <h3 className="font-serif text-[24px] text-ink-soft">Founder Dependency Scan</h3>
+                  <p className="font-serif text-ink"><span className="text-[28px]">£500</span><span className="ml-2 font-sans text-[17px] text-body">+ VAT</span></p>
+                  <p className="mt-3 text-[14px] leading-[1.6] text-body">Questionnaire, 60-minute scoping interview, dependency heat map and priority plan.</p>
                   <PrimaryButton className="mt-4 px-10 py-2">Book a founder scan</PrimaryButton>
-                  <p className="mt-3 text-[12px] text-body">Credited against a full engagement if you proceed.</p>
+                  <p className="mt-3 text-[13px] text-body">Credited against a full engagement if you proceed.</p>
                 </div>
               </Card>
               <DottedArrow className="hidden h-4 w-[60px] flex-shrink-0 text-brand md:block" />
               <Card className="flex flex-1 gap-5 px-6 pb-6 pt-6">
-                <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-brand font-serif text-[22px] text-white">2</span>
+                <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-brand font-serif text-[24px] text-white">2</span>
                 <div>
-                  <h3 className="font-serif text-[22px] text-ink-soft">Verified Owner Transfer</h3>
-                  <p className="font-serif text-ink"><span className="text-[20px]">From </span><span className="text-[26px]">£7,500</span><span className="ml-2 font-sans text-[16px] text-body">per company</span></p>
-                  <p className="mt-3 text-[13px] leading-[1.6] text-body">Structured interviews, Business Memory, successor testing, readiness assessment and agent setup.</p>
+                  <h3 className="font-serif text-[24px] text-ink-soft">Verified Owner Transfer</h3>
+                  <p className="font-serif text-ink"><span className="text-[22px]">From </span><span className="text-[28px]">£7,500</span><span className="ml-2 font-sans text-[17px] text-body">per company</span></p>
+                  <p className="mt-3 text-[14px] leading-[1.6] text-body">Structured interviews, Business Memory, successor testing, readiness assessment and agent setup.</p>
                   <ArrowLink className="mt-6" to="/pricing">View pricing</ArrowLink>
                 </div>
               </Card>
@@ -339,8 +339,8 @@ export default function HowItWorks() {
                 <Card key={f.q} className="flex gap-3 px-5 py-5">
                   <QuestionCircle size={26} className="flex-shrink-0 text-brand" />
                   <div>
-                    <h3 className="text-[14px] font-semibold leading-snug text-[#1f2a28]">{f.q}</h3>
-                    <p className="mt-2 text-[12.5px] leading-[1.6] text-body">{f.a}</p>
+                    <h3 className="text-[15px] font-semibold leading-snug text-[#1f2a28]">{f.q}</h3>
+                    <p className="mt-2 text-[13.5px] leading-[1.6] text-body">{f.a}</p>
                   </div>
                 </Card>
               ))}

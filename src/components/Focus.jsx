@@ -24,16 +24,16 @@ const isNotList = [
 export default function Focus() {
   return (
     <section id="how" className="bg-page">
-      <div className="mx-auto max-w-[1180px] px-6 pb-12 pt-12 lg:px-10">
-        <p className="text-center text-[11.5px] font-bold uppercase tracking-[0.14em] text-brand">
+      <div className="mx-auto max-w-[1260px] px-6 pb-12 pt-12 lg:px-10">
+        <p className="text-center text-[12.5px] font-bold uppercase tracking-[0.14em] text-brand">
           Current focus
         </p>
-        <h2 className="mt-2 text-center font-serif text-[27px] leading-[1.25] text-ink">
+        <h2 className="mt-2 text-center font-serif text-[30px] leading-[1.25] text-ink">
           What we are building now
           <br />
           A guided service before a self-service platform.
         </h2>
-        <p className="mx-auto mt-4 max-w-[720px] text-center text-[13.5px] leading-[1.75] text-body">
+        <p className="mx-auto mt-4 max-w-[720px] text-center text-[14.5px] leading-[1.75] text-body">
           During the MVP, our team works directly with the owner, successor and responsible
           management. We supervise the interviews, evidence review, Business Memory, successor
           challenge and final report before automating more of the workflow.
@@ -46,14 +46,14 @@ export default function Focus() {
               className="flex min-h-[150px] flex-col items-center justify-center rounded-xl border border-line bg-white px-6 py-7 text-center"
             >
               <div className="text-brand">{c.icon}</div>
-              <p className="mt-4 whitespace-pre-line font-serif text-[21px] leading-[1.2] text-ink-soft">
+              <p className="mt-4 whitespace-pre-line font-serif text-[23px] leading-[1.2] text-ink-soft">
                 {c.label}
               </p>
             </div>
           ))}
         </div>
 
-        <p className="mt-6 text-center font-serif text-[15px] text-muted">
+        <p className="mt-6 text-center font-serif text-[16px] text-muted">
           Established UK SMEs where practical knowledge remains concentrated in the owner.
         </p>
 
@@ -70,12 +70,12 @@ function Panel({ title, tone, items, Icon }) {
   const bg = tone === 'mint' ? 'bg-mint-soft border-[#dde6df]' : 'bg-cream-soft border-[#ece6dc]'
   return (
     <div className={`rounded-xl border px-9 pb-8 pt-7 ${bg}`}>
-      <p className="text-center text-[13px] font-bold uppercase tracking-[0.1em] text-brand">
+      <p className="text-center text-[14px] font-bold uppercase tracking-[0.1em] text-brand">
         {title}
       </p>
       <ul className="mt-6 space-y-3.5">
         {items.map((t) => (
-          <li key={t} className="flex items-center gap-4 text-[13.5px] text-body">
+          <li key={t} className="flex items-center gap-4 text-[14.5px] text-body">
             <Icon size={20} className="flex-shrink-0 text-brand" />
             {t}
           </li>
