@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import { submitForm } from '../lib/api'
 import { Eyebrow, SectionTitle, Container, CheckList, Card } from '../components/shared'
 import {
   Person, SpeechBubble, DocLines, CheckCircle, Warning, ArrowSm, Tag, TwoPeople, Handshake, Stairs,
@@ -127,13 +128,26 @@ const initialForm = {
 export default function BookScan() {
   const [form, setForm] = useState(initialForm)
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
+  const [honeypot, setHoneypot] = useState('')
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.type === 'checkbox' ? e.target.checked : e.target.value }))
   const togglePlan = (label) =>
     setForm((f) => ({ ...f, plans: f.plans.includes(label) ? f.plans.filter((p) => p !== label) : [...f.plans, label] }))
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
+    if (sending) return
+    setError('')
+    setSending(true)
+    try {
+      await submitForm('founder-scan', { ...form, website_url: honeypot })
+      setSubmitted(true)
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -194,10 +208,12 @@ export default function BookScan() {
                 <div className="mt-8 rounded-lg bg-mint-soft px-6 py-8 text-center">
                   <CheckCircle size={40} className="mx-auto text-brand" />
                   <h3 className="mt-4 font-serif text-[24px] text-ink">Request received</h3>
-                  <p className="mt-2 text-[14.5px] text-body">Thank you. We will review your request and reply to {form.email || 'your work email'} shortly.</p>
+                  <p className="mt-2 text-[14.5px] text-body">Thank you. Your request has been sent to our team and a confirmation is on its way to {form.email || 'your work email'}.</p>
                 </div>
               ) : (
                 <form onSubmit={onSubmit} className="mt-5 space-y-5">
+                  {/* honeypot: hidden from people, filled by bots */}
+                  <input type="text" name="website_url" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
                   <div>
                     <p className={groupCls}>About you</p>
                     <div className="mt-2 grid gap-4 sm:grid-cols-2">
@@ -277,11 +293,15 @@ export default function BookScan() {
                     I understand that the Founder Dependency Scan costs £500 plus VAT and that no work begins until the scope is confirmed.
                   </label>
 
+                  {error && (
+                    <p role="alert" className="rounded-md border border-[#f0c9c2] bg-[#fdf1ee] px-4 py-3 text-[14px] text-[#8a2f22]">{error}</p>
+                  )}
                   <button
                     type="submit"
-                    className="w-full rounded-md bg-brand py-3 text-[16px] font-semibold text-white shadow-sm transition hover:bg-brand-dark"
+                    disabled={sending}
+                    className="w-full rounded-md bg-brand py-3 text-[16px] font-semibold text-white shadow-sm transition hover:bg-brand-dark disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    Request a founder scan
+                    {sending ? 'Sending…' : 'Request a founder scan'}
                   </button>
                   <p className="text-[13.5px] leading-[1.7] text-body">
                     We will use these details only to review and respond to your request.
