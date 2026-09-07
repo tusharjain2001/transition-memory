@@ -340,7 +340,7 @@ export default function Home() {
               <ShieldSparkle size={52} className="flex-shrink-0 text-brand" />
               <div className="lg:w-[360px]">
                 <h3 className="font-serif text-[24px] text-ink">Need the complete transfer?</h3>
-                <p className="mt-1 text-[14px] text-body">Verified Owner Transfer — from £7,500 per company</p>
+                <p className="mt-1 text-[14px] text-body">Verified Owner Transfer — from £5,000 per company</p>
               </div>
               <div className="grid flex-1 gap-x-8 gap-y-2 sm:grid-cols-2">
                 {['Structured owner interviews', 'Transition readiness assessment', 'Business Memory', 'Owner Memory Agent setup', 'Successor testing'].map((t) => (
@@ -370,7 +370,7 @@ export default function Home() {
               <p className="mt-2 text-[15px] text-body">Find out where the company still depends on you—and what needs to move before you do.</p>
               <div className="mt-5 flex flex-wrap items-center justify-center gap-8">
                 <PrimaryButton className="px-10 py-2.5">Book a founder scan</PrimaryButton>
-                <ArrowLink href="#contact">Talk to us</ArrowLink>
+                <ArrowLink to={BOOK_PATH}>Talk to us</ArrowLink>
               </div>
             </div>
           </Container>

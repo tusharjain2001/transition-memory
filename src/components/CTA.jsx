@@ -24,12 +24,12 @@ export default function CTA() {
           >
             Book a founder scan
           </Link>
-          <a
-            href="#contact"
+          <Link
+            to="/book-a-founder-scan"
             className="inline-flex items-center gap-3 text-[15px] font-semibold text-brand hover:underline"
           >
             Talk to us <ArrowSm />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

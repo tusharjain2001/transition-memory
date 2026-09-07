@@ -23,6 +23,16 @@ export default function Footer() {
           </p>
           <p className="mt-1 text-[10.5px] text-white/85">© 2026 TransitionMemory.</p>
         </div>
+        <div className="text-[10.5px] leading-snug text-white/85">
+          <a href="mailto:hello@transitionmemory.com" className="hover:underline">
+            hello@transitionmemory.com
+          </a>
+          <address className="mt-1 not-italic">
+            25 Wilton Road,
+            <br />
+            London, SW1V 1LW
+          </address>
+        </div>
         <nav className="flex flex-wrap items-center gap-x-9 gap-y-3 text-[12.5px]">
           {links.map((l) =>
             l.to.startsWith('#') ? (

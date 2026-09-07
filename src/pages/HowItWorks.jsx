@@ -321,7 +321,7 @@ export default function HowItWorks() {
                 <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-brand font-serif text-[24px] text-white">2</span>
                 <div>
                   <h3 className="font-serif text-[24px] text-ink-soft">Verified Owner Transfer</h3>
-                  <p className="font-serif text-ink"><span className="text-[22px]">From </span><span className="text-[28px]">£7,500</span><span className="ml-2 font-sans text-[17px] text-body">per company</span></p>
+                  <p className="font-serif text-ink"><span className="text-[22px]">From </span><span className="text-[28px]">£5,000</span><span className="ml-2 font-sans text-[17px] text-body">per company</span></p>
                   <p className="mt-3 text-[14px] leading-[1.6] text-body">Structured interviews, Business Memory, successor testing, readiness assessment and agent setup.</p>
                   <ArrowLink className="mt-6" to="/pricing">View pricing</ArrowLink>
                 </div>

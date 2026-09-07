@@ -284,7 +284,7 @@ export const CtaBand = ({ icon, title, body, primary = 'Book a founder scan', pr
         <PrimaryButton href={primaryHref} className="px-10 py-2.5">
           {primary}
         </PrimaryButton>
-        <ArrowLink href="#contact">Talk to us</ArrowLink>
+        <ArrowLink to={BOOK_PATH}>Talk to us</ArrowLink>
       </div>
     </Container>
   </section>

@@ -439,7 +439,7 @@ export default function BookScan() {
                 <a href="#top" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }} className="rounded-md bg-brand px-8 py-2.5 text-[15px] font-semibold text-white shadow-sm hover:bg-brand-dark">
                   Request a founder scan
                 </a>
-                <a href="#contact" className="border-b-2 border-brand pb-0.5 text-[14.5px] font-semibold text-brand">Talk to us</a>
+                <a href="#top" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }} className="border-b-2 border-brand pb-0.5 text-[14.5px] font-semibold text-brand">Talk to us</a>
               </div>
             </div>
           </Container>
