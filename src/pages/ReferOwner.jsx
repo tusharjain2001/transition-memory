@@ -198,7 +198,7 @@ export default function ReferOwner() {
                   <p className="text-[13.5px] leading-[1.7] text-body">
                     We will use these details only to review the referral and contact the people named.
                     <br />
-                    Read our <a href="#privacy" className="border-b-2 border-brand font-semibold text-brand">Privacy notice</a>.
+                    Read our <Link to="/privacy" className="border-b-2 border-brand font-semibold text-brand">Privacy notice</Link>.
                   </p>
                 </form>
               )}

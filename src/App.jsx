@@ -8,6 +8,7 @@ import Pricing from './pages/Pricing'
 import HowItWorks from './pages/HowItWorks'
 import BookScan from './pages/BookScan'
 import ReferOwner from './pages/ReferOwner'
+import Privacy from './pages/Privacy'
 
 function ScrollManager() {
   const { pathname, hash } = useLocation()
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/book-a-founder-scan" element={<BookScan />} />
           <Route path="/refer-an-owner" element={<ReferOwner />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>

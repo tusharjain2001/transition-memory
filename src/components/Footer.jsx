@@ -7,7 +7,7 @@ const links = [
   { label: 'Pricing', to: '/pricing' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '#contact' },
-  { label: 'Privacy', to: '#privacy' },
+  { label: 'Privacy', to: '/privacy' },
 ]
 
 export default function Footer() {
